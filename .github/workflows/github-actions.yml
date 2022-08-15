@@ -42,5 +42,5 @@ jobs:
       - name: Run application
         run: |
           ls
-          mkdir -p work && cp requirements.txt setup.sh cleanup.sh work
+          mkdir -p appconfig_0/work && cp requirements.txt setup.sh cleanup.sh appconfig_0/work
           ./moses-linux/tdskt -p application ${{ env.APPID }} build release
