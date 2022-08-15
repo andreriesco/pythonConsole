@@ -43,5 +43,5 @@ jobs:
         run: |
           ls
           mkdir -p appconfig_0/work && cp requirements.txt setup.sh cleanup.sh appconfig_0/work
-          "rsync -r --copy-unsafe-links -p -g -o -t -q --delete --exclude-from=.rsync-exclude-list . appconfig_0/work/pythonConsole/"
+          mkdir -p appconfig_0/work/pythonConsole rsync -r --copy-unsafe-links -p -g -o -t -q --delete --exclude-from=.rsync-exclude-list . appconfig_0/work/pythonConsole/
           ./moses-linux/tdskt -p application ${{ env.APPID }} build release
