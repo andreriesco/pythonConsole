@@ -41,5 +41,6 @@ jobs:
           echo "APPID=$APPID" >> $GITHUB_ENV
       - name: Run application
         run: |
+          ls
           mkdir -p work && cp requirements.txt setup-sh cleanup.sh work
           ./moses-linux/tdskt -p application ${{ env.APPID }} build release
